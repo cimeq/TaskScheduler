@@ -5,7 +5,10 @@ message(STATUS "${PROJECT_NAME} Version: ${PROJECT_VERSION}")
 
 add_library(${PROJECT_NAME} INTERFACE)
 add_library(GitHub::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
-
+target_sources(${PROJECT_NAME}
+        INTERFACE
+        src/TaskScheduler.h
+        )
 target_include_directories( ${PROJECT_NAME}
         INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
